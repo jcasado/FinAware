@@ -1,0 +1,1 @@
+Here we save the figures to show in the main README file that explain the project and architecture
