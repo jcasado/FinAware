@@ -9,5 +9,5 @@ public interface GeoHubServiceI {
 
     List<GeoHubDto> getGeoHubByLocation(String location) throws RuntimeException;
 
-//    List<GeoHubDto> getGeoHubByCrop(String crop)throws RuntimeException;
+    List<GeoHubDto> getGeoHubByCrop(String crop)throws RuntimeException;
 }

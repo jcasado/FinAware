@@ -22,11 +22,39 @@ export class GeoHubService {
   geoHubURL = environment.apiUrl;
   geoHub: IGeoHub[] = [
     {
+      id: 5,
+      crop: 'wheat',
+      climateRiskScore: 55,
+      dateComputed: '2022-11-05T13:25:07.612Z',
+      location: 'Vaasa',
+    },
+    {
       id: 1,
       crop: 'Potatoes',
       climateRiskScore: 34,
       dateComputed: '2022-11-05T13:25:07.612Z',
       location: 'Helsinki',
+    },
+    {
+      id: 2,
+      crop: 'Beans',
+      climateRiskScore: 100,
+      dateComputed: '2022-11-05T13:25:07.612Z',
+      location: 'Oulu',
+    },
+    {
+      id: 3,
+      crop: 'Berries',
+      climateRiskScore: 73,
+      dateComputed: '2022-11-05T13:25:07.612Z',
+      location: 'Espoo',
+    },
+    {
+      id: 4,
+      crop: 'Mango',
+      climateRiskScore: 24,
+      dateComputed: '2022-11-05T13:25:07.612Z',
+      location: 'Lapland',
     },
   ];
 

@@ -41,7 +41,7 @@ spring:
             non_contextual_creation: true
 
 ### Postgres Docker image
-#docker run --name myPostgresDb -p 5432:5432 -e POSTGRES_USER=cassini-postgres -e POSTGRES_PASSWORD=cassini-postgres -e POSTGRES_DB=cassini-db -d postgres
+#docker run --name myPostgresDb -p 5432:5432 -e POSTGRES_USER=finaware-postgres -e POSTGRES_PASSWORD=finaware-postgres -e POSTGRES_DB=finaware-db -d postgres
 
 ################# Swagger ########################
 springdoc:
