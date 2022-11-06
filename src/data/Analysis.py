@@ -19,9 +19,11 @@ def get_data(): # get the datafile and crop it. The filename is hardcoded into c
     df = df.drop(df[df.tot < 0].index)
     return df
 
-def cut_year(year): # cut the table into yearly tables with the specified end year
+
+def cut_year(start_year, end_year): # cut the table into yearly tables with the specified end year
     tables = []
-    vuodet = years[years == year]
+    vuodet = years[np.where(years[years <= end_year] >= start_year)]
+#    vuodet = years[years == year] # One year slide
 #    vuodet = years[years <= year] # Sliding end year
     for item in vuodet :
         tables.append(data[data.Year == item][['tot']])        
@@ -60,7 +62,7 @@ tulos_std = []
 
 for item in years:
     data = get_data()
-    taulut = cut_year(item)
+    taulut = cut_year(item, item)
     jakaumat = normal(taulut)
     parvot = ttest(jakaumat)
     tulos_mean.append(parvot[0])
@@ -72,6 +74,8 @@ swi_50 = stats.norm(tulos_mean,tulos_std).cdf(50) # array of likelihoods of SWI 
 swi_100 = stats.norm(tulos_mean,tulos_std).cdf(100) # array of likelihoods of SWI of 0
 swi_150 = stats.norm(tulos_mean,tulos_std).cdf(150) # array of likelihoods of SWI of 0
 
+# Testing to find the SWI index value with the largest variability in probability.
+# (probability of having SWI below the given value)
 def score_count(nro) :
     score = stats.norm(tulos_mean,tulos_std).cdf(nro)
     return score.max()-score.min()
