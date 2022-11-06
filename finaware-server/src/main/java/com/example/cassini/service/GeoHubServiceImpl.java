@@ -39,25 +39,25 @@ public class GeoHubServiceImpl implements GeoHubServiceI {
         return geoHubDtoList;
     }
 
-//    @Override
-//    public List<GeoHubDto> getGeoHubByCrop(String crop) throws RuntimeException{
-//        List<GeoHubDto> productList = getGeoHubs();
-//
-//        if (productList == null)
-//            return null;
-//
-//        if (crop == null) throw new RuntimeException("Crop parameter is empty");
-//
-//        List<GeoHubDto> geoHubDtoList = new ArrayList<>();
-//
-//        if(!productList.isEmpty()){
-//            productList.forEach(product -> {
-//                if (product.getLocation().toLowerCase().contains(crop)) {
-//                    geoHubDtoList.add(product);
-//                }
-//            });
-//        }
-//        return geoHubDtoList;
-//    }
+    @Override
+    public List<GeoHubDto> getGeoHubByCrop(String crop) throws RuntimeException{
+        List<GeoHubDto> productList = getGeoHubs();
+
+        if (productList == null)
+            return null;
+
+        if (crop == null) throw new RuntimeException("Crop parameter is empty");
+
+        List<GeoHubDto> geoHubDtoList = new ArrayList<>();
+
+        if(!productList.isEmpty()){
+            productList.forEach(product -> {
+                if (product.getLocation().toLowerCase().contains(crop)) {
+                    geoHubDtoList.add(product);
+                }
+            });
+        }
+        return geoHubDtoList;
+    }
 
 }

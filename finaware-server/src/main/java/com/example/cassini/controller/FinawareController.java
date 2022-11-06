@@ -40,16 +40,16 @@ public class FinawareController {
         return new ResponseEntity<>(geoHubService.getGeoHubByLocation(location), HttpStatus.OK);
     }
 
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "GeoHub Found", content = {
-//                    @Content(mediaType = "application/json", schema = @Schema(implementation = GeoHubDto.class)) }),
-//            @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
-//            @ApiResponse(responseCode = "404", description = "getHub not found", content = @Content) })
-//    @Operation(summary = "Get GeoHub from system find by crop")
-//    @GetMapping("/getGeoHub/{crop}")
-//    public ResponseEntity<List<GeoHubDto>> getGeoHubByCrop(
-//            @Parameter(description = "Asset name") @RequestParam String crop) throws RuntimeException{
-//        return new ResponseEntity<>(geoHubService.getGeoHubByCrop(crop), HttpStatus.OK);
-//    }
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "GeoHub Found", content = {
+                    @Content(mediaType = "application/json", schema = @Schema(implementation = GeoHubDto.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid id supplied", content = @Content),
+            @ApiResponse(responseCode = "404", description = "getHub not found", content = @Content) })
+    @Operation(summary = "Get GeoHub from system find by crop")
+    @GetMapping("/getGeoHub/{crop}")
+    public ResponseEntity<List<GeoHubDto>> getGeoHubByCrop(
+            @Parameter(description = "Asset name") @RequestParam String crop) throws RuntimeException{
+        return new ResponseEntity<>(geoHubService.getGeoHubByCrop(crop), HttpStatus.OK);
+    }
 
 }

@@ -30,7 +30,17 @@
   <!-- Symbol Column -->
   <ng-container matColumnDef="climateRiskScore">
     <th mat-header-cell *matHeaderCellDef>Climate Risk Score</th>
-    <td mat-cell *matCellDef="let element">{{ element.climateRiskScore }}</td>
+    <td mat-cell *matCellDef="let element">
+      <div
+        [ngClass]="{
+          highRisk: element.climateRiskScore > 66,
+          mediumRisk:
+            element.climateRiskScore > 33 && element.climateRiskScore < 66
+        }"
+      >
+        {{ element.climateRiskScore }}
+      </div>
+    </td>
   </ng-container>
   <!-- Symbol Column -->
   <ng-container matColumnDef="dateComputed">
@@ -50,3 +60,11 @@
     </td>
   </tr>
 </table>
+<mat-paginator
+  [length]="100"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page"
+>
+  ></mat-paginator
+>
