@@ -6,6 +6,6 @@ The FinAware solution integrates publicly available satelite measurements from t
 ![Method diagram](/img/diagram.png)
 
 ## Demo data
-The Risk factor is lower on years with higher moisture and less variability (see Figure).
+The Risk factor is lower on years with higher moisture and less variability (see Figure). Three adjacent 1km2 points from the same parcel of potato starch production.
 
 ![Demo data](/img/SWI015_threepoints_from_one_parcel.png)
