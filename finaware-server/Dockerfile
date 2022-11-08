@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests=true
 
 
-FROM openjdk:11-jdk-alpine
+FROM amazoncorretto:11-alpine-jdk
 COPY --from=maven /app/target/*.jar finaware-server.jar
 
 EXPOSE 9000
