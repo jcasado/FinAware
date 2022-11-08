@@ -10,4 +10,4 @@ FROM amazoncorretto:11-alpine-jdk
 COPY --from=maven /app/target/*.jar finaware-server.jar
 
 EXPOSE 9000
-ENTRYPOINT ["sh", "-c", "java -jar", "finaware-server.jar"]
+ENTRYPOINT [ "java", "-jar", "finaware-server.jar"]
